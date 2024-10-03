@@ -1,0 +1,14 @@
+INSERT INTO authors (author_id, author_name)
+VALUES (1, 'Terry Pratchett'), (2, 'Stephen King');
+
+INSERT INTO genres (genre_id, genre_name)
+VALUES (1, 'Fantasy'), (2, 'Horror');
+
+INSERT INTO books (book_id, title, publication_year, author_id, genre_id)
+VALUES (1, 'Mort', 	1987, 1, 1), (2, 'Cujo', 1981 , 2, 2);
+
+INSERT INTO users (user_id, username, email)
+VALUES (1, 'Kate', 'kate123@gmail.com'), (2, 'Jhon', 'jhon098@gmail.com');
+
+INSERT INTO borrowed_books (borrow_id, book_id, user_id, borrow_date, return_date)
+VALUES (1, 2, 1, '2024-02-14', '2024-02-28');

@@ -1,0 +1,17 @@
+USE db_p3;
+SELECT orders.id as order_id, date, 
+products.name as product_name, products.price as product_price,
+order_details.quantity as quantity,
+customers.name as customer_name, customers.address as customer_address, customers.postal_code as customer_postcode, 
+shippers.name as shipper_name, shippers.phone as shipper_phone,
+categories.name as category_name, categories.description as category_description,
+suppliers.name as supplier_name, suppliers.phone as supplier_phone,
+employees.last_name as employee_name, employees.notes as employee_notes
+FROM orders 
+INNER JOIN customers ON orders.customer_id = customers.id
+RIGHT JOIN employees ON orders.employee_id = employees.employee_id
+INNER JOIN shippers ON orders.shipper_id = shippers.id
+INNER JOIN order_details ON orders.id = order_details.order_id
+INNER JOIN products ON order_details.product_id = products.id
+INNER JOIN categories ON products.category_id = categories.id
+INNER JOIN suppliers ON products.supplier_id = suppliers.id
